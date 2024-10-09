@@ -11,6 +11,8 @@
 
 body {
     background: #1f242d;
+    color: #fff;
+
 }
 
 .header {
@@ -32,17 +34,184 @@ body {
     text-decoration: none; /* removes decoration that can typically appear on links (like underlines) */
     font-weight: 600; /* sets thickness to 600 (semi-bold) (bold is 700) */
     /* cursor: pointer; keeps the cursor the same when hovering over */
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
 }
 
 .navbar a { /* a targets all elements inside the class .navbar */
+    display: inline-block;
     font-size: 18px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px; /* adds a 35px margin to the left side of each navigation link */
     transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i)) /* we declared --i in html */
 }
 
-.navbar a:hover { /* pseudo-class: applies styles to an element when the user hovers mouse over it */
-    color: #E64833;
+.navbar a:hover,
+.navbar a.active { /* pseudo-class: applies styles to an element when the user hovers mouse over it */
+    color: #39ff14;
 }
+
+.home {
+    position: relative; /* positioned relative to its normal position (remains in flow of page, but can now use top, left, right, & bottom properties */
+    width: 100%;
+    height: 100vh; /* 100% of viewport height - take up full height of browser window */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10% 0; /* 70 px top padding, 10% left and right, 0 bottom */
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3:nth-of-type(2) { /* Selects the 2nd occurence of an <h3> element (And I'm a ...) */
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span {
+    color: #39ff14;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 16px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-img {
+    max-width: 450px;
+    margin-right: -20px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #39ff14;
+    border-radius: 50%;
+    font-size: 20px;
+    color:#39ff14;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .3s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+    background: #39ff14;
+    color: #1f242d;
+    box-shadow: 0 0 10px #39ff14;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #39ff14;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #39ff14;
+    font-size: 16px;
+    color: #1f242d;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+/* KEYFRAMES ANIMATION */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+/* LEFT OFF AT 7:27 */
