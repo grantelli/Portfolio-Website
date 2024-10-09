@@ -1,1 +1,48 @@
+/* import poppins font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* poppins: main font, sans-serif: fallback font */
+}
+
+body {
+    background: #1f242d;
+}
+
+.header {
+    position: fixed; /* stay on the screen, even when you scroll down */
+    top: 0; /* position at very top of webpage */
+    left: 0; /* position at very left of webpage */
+    width: 100%; /* take up full width of the page, no matter the screen size */
+    padding: 20px 10%; /* internal space - 20px top & bottom, 10% of width on right & left */
+    background: transparent;
+    display: flex; /* sets layout to flexbox - allows arranging child elements in a flexible way */
+    justify-content: space-between; /* spreads child elements across screen, with even space in-between */
+    align-items: center; /* ensures child elements are vertically alligned in the center */
+    z-index: 100; /* controls stacking order of elements: will be higher than any elements lower than 100 */
+}
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none; /* removes decoration that can typically appear on links (like underlines) */
+    font-weight: 600; /* sets thickness to 600 (semi-bold) (bold is 700) */
+    /* cursor: pointer; keeps the cursor the same when hovering over */
+}
+
+.navbar a { /* a targets all elements inside the class .navbar */
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px; /* adds a 35px margin to the left side of each navigation link */
+    transition: .3s;
+}
+
+.navbar a:hover { /* pseudo-class: applies styles to an element when the user hovers mouse over it */
+    color: #E64833;
+}
