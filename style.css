@@ -108,8 +108,8 @@ body {
     max-width: 450px;
     margin-right: -20px;
     opacity: 0;
-    animation: zoomIn 1s ease forwards;
-    animation-delay: 2s;
+    animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+    animation-delay: 2s, 3s;
 }
 
 .social-media a {
@@ -212,6 +212,18 @@ body {
         transform: scale(1);
         opacity: 1;
     }
-
 }
-/* LEFT OFF AT 7:27 */
+
+@keyframes floatImage {
+    0% {
+        transaform: translateY(0);
+    }
+
+    50% {
+        transaform: translateY(-24px);
+    }
+
+    100% {
+        transaform: translateY(0);
+    }
+}
