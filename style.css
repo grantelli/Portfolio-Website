@@ -20,8 +20,8 @@ body {
     top: 0; /* position at very top of webpage */
     left: 0; /* position at very left of webpage */
     width: 100%; /* take up full width of the page, no matter the screen size */
-    padding: 20px 10%; /* internal space - 20px top & bottom, 10% of width on right & left */
-    background: transparent;
+    padding: 35px 8%; /* internal space - 20px top & bottom, 8% of width on right & left */
+    background: #1f242d;
     display: flex; /* sets layout to flexbox - allows arranging child elements in a flexible way */
     justify-content: space-between; /* spreads child elements across screen, with even space in-between */
     align-items: center; /* ensures child elements are vertically alligned in the center */
@@ -29,7 +29,7 @@ body {
 }
 
 .logo {
-    font-size: 25px;
+    font-size: 32px;
     color: #fff;
     text-decoration: none; /* removes decoration that can typically appear on links (like underlines) */
     font-weight: 600; /* sets thickness to 600 (semi-bold) (bold is 700) */
@@ -40,7 +40,7 @@ body {
 
 .navbar a { /* a targets all elements inside the class .navbar */
     display: inline-block;
-    font-size: 18px;
+    font-size: 20px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
@@ -49,6 +49,10 @@ body {
     opacity: 0;
     animation: slideTop .5s ease forwards;
     animation-delay: calc(.2s * var(--i)) /* we declared --i in html */
+}
+
+.menu-icon {
+    display: none;
 }
 
 .navbar a:hover,
@@ -63,15 +67,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 70px 10% 0; /* 70 px top padding, 10% left and right, 0 bottom */
+    padding: 50px 8% 0; /* 50 px top padding, 8% left and right, 0 bottom */
 }
 
-.home-content {
-    max-width: 600px;
-}
+/* .home-content {
+    max-width: 50%;
+} */
 
 .home-content h3 {
-    font-size: 32px;
+    font-size: 54px;
     font-weight: 700;
     opacity: 0;
     animation: slideBottom 1s ease forwards;
@@ -79,7 +83,6 @@ body {
 }
 
 .home-content h3:nth-of-type(2) { /* Selects the 2nd occurence of an <h3> element (And I'm a ...) */
-    margin-bottom: 30px;
     animation: slideTop 1s ease forwards;
     animation-delay: .7s;
 }
@@ -89,7 +92,7 @@ body {
 }
 
 .home-content h1 {
-    font-size: 56px;
+    font-size: 76px;
     font-weight: 700;
     margin: -3px 0;
     opacity: 0;
@@ -97,16 +100,8 @@ body {
     animation-delay: 1s;
 }
 
-.home-content p {
-    font-size: 16px;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: 1s;
-}
-
-.home-img {
-    max-width: 450px;
-    margin-right: -20px;
+.home-img img {
+    max-width: 500px;
     opacity: 0;
     animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
     animation-delay: 2s, 3s;
@@ -116,12 +111,12 @@ body {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     background: transparent;
     border: 2px solid #39ff14;
     border-radius: 50%;
-    font-size: 20px;
+    font-size: 25px;
     color:#39ff14;
     text-decoration: none;
     margin: 30px 15px 30px 0;
@@ -143,7 +138,7 @@ body {
     background: #39ff14;
     border-radius: 40px;
     box-shadow: 0 0 10px #39ff14;
-    font-size: 16px;
+    font-size: 20px;
     color: #1f242d;
     letter-spacing: 1px;
     text-decoration: none;
@@ -152,6 +147,163 @@ body {
     animation: slideTop 1s ease forwards;
     animation-delay: 2s;
 }
+
+
+.about {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 12% 0;
+}
+
+.about-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #39ff14;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+}
+
+
+
+
+/* MEDIA QUERIES FOR SMALLER SCREENS */
+@media (max-width: 1430px) {
+    .home-content h1{
+        font-size: 60px;
+    }
+
+    .home-content h3 {
+        font-size: 40px;
+    }
+
+    .home-img img {
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .home-content h1{
+        font-size: 50px;
+    }
+
+    .home-content h3 {
+        font-size: 32px;
+    }
+
+    .home-img img {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 905px) {
+    .home {
+        flex-direction: column; /* Stack elements vertically */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home-content {
+        max-width: 100%; /* Make the content take full width */
+        text-align: center; /* Center-align the text */
+    }
+
+    .home-img img {
+        margin-top: 100px; /* Add some margin above and below the image */
+    }
+
+    .social-media {
+        justify-content: center; /* Center social media icons */
+    }
+}
+
+/* ADD 3 LINE BUTTON FOR NAV BAR HERE */
+
+@media (max-width: 805px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px; /* Position it below the logo */
+        left: 10%; /* Align with the logo */
+        width: 80%; /* Take a good portion of the screen */
+        height: 0; /* Collapsed state */
+        overflow: hidden; /* Hide content when collapsed */
+        background-color: transparent;
+        transition: height 0.3s ease; /* Smooth height transition */
+    }
+
+    .navbar.active {
+        height: auto; /* Expand to fit the contents */
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        font-size: 20px;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .header {
+        padding: 20px 10%;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        top: 0;
+        background: #1f242d; /* Ensure the header has a background */
+    }
+
+    .home {
+        transition: margin-top 0.3s ease; /* Smooth transition for the push-down effect */
+    }
+}
+
+@media (max-width: 600px) {
+    .home-content h1{
+        font-size: 40px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-img img {
+        max-width: 300px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 470px) {
+    .home-content h1{
+        font-size: 32px;
+    }
+
+    .home-content h3 {
+        font-size: 20px;
+    }
+
+    .home-img img {
+        max-width: 250px;
+    }
+}
+
 
 /* KEYFRAMES ANIMATION */
 @keyframes slideRight {
@@ -216,14 +368,12 @@ body {
 
 @keyframes floatImage {
     0% {
-        transaform: translateY(0);
+        transform: translateY(0);
     }
-
     50% {
-        transaform: translateY(-24px);
+        transform: translateY(-24px);
     }
-
     100% {
-        transaform: translateY(0);
+        transform: translateY(0);
     }
 }

@@ -15,15 +15,20 @@
   <body>
     
     <header class="header">
+      <!-- Naviagtion Bar Logo - Top Left -->
         <a href="#" class="logo">Grant Elliott</a> <!-- # brings user to top of page -->
 
+        <!-- Navigation Bar Links -->
         <nav class="navbar">
-            <a href="#" style="--i:1;" class="active">Home</a>
-            <a href="#" style="--i:2;" >About</a>
-            <a href="#" style="--i:3;" >Skills</a>
-            <a href="#" style="--i:4;" >Portfolio</a>
-            <a href="#"style="--i:5;" >Contact</a>
+            <a href="#about" style="--i:1;" >About</a>
+            <a href="#" style="--i:2;" >Skills</a>
+            <a href="#"style="--i:3;" >Contact</a>
         </nav>
+
+        <div class="menu-icon" id = "menu-icon">
+          <i class='bx bx-menu'></i> <!-- Hamburger Menu Icon from Boxicons -->
+        </div>
+
     </header>
 
     <section class="home">  
@@ -31,22 +36,27 @@
             <h3>Hey!</h3>
             <h1>I'm Grant Elliott</h1>
             <h3>And I'm a <span class="positions"></span></h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit iure itaque qui, assumenda libero harum nobis animi nisi atque natus, ipsum fugit modi eligendi optio necessitatibus sapiente molestias dolor beatae?</p>
-
             <div class="social-media">
-                <a href="#" style="--i:7;"><i class='bx bxl-linkedin'></i></a> <!-- LinkedIn symbol as a font from boxicons.com-->
-                <a href="#" style="--i:8;"><i class='bx bxl-github' ></i></a>
-                <a href="#" style="--i:9;"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" style="--i:10;"><i class='bx bxl-tiktok' ></i></i></a>
+                <a href="https://www.linkedin.com/in/grantelli/" target="_blank"  style="--i:7;"><i class='bx bxl-linkedin'></i></a> <!-- LinkedIn symbol as a font from boxicons.com-->
+                <a href="https://github.com/grantelli" target="_blank" style="--i:8;"><i class='bx bxl-github' ></i></a>
             </div>
 
-            <a href="#" class="btn">Download Resume</a>
+            <a href="https://docs.google.com/document/d/e/2PACX-1vQOpDmO82eN-fuV7fG0fWNFuKnAvPoxKOCFAHsf2xQsP47AR3ngkmSQD10ZxtYaXIEqDWKZFttYOkWv/pub" target="_blank" class="btn">See Resume</a>
 
         </div>
 
         <div class="home-img">
-            <img src="" alt="Picture of Grant Elliott">
+            <img src="grant-profile.png" alt="Picture of Grant Elliott">
         </div>
+    </section>
+
+    <section class="about">
+      <div class="about-content">
+        <h2 class="About Me"></h2>
+        <p class="Hey, I'm Grant! I'm a first-year Computer Science student at Iowa State University with experience in languages like Java, Javascript, Typescript, and Python. I'm passionate about using programming to create solutions that will help make a difference in the world, and have built a variety of personal projects to reflect this.
+
+        Beyond programming, I have always been passionate about creativity in all its forms. My films have gained millions of likes on social media, I've founded multiple businesses, and I am constantly finding new ways to explore my creativity. I'm also extremely enthusiastic about health, fitness, and nature, and try to always find balance between my creative and active pursuits."></p>
+      </div>
     </section>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script> <!--import typed.js library--> 
