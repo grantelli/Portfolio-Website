@@ -10,18 +10,23 @@
 }
 
 body {
-    background: #1f242d;
+    /* background: #1f242d; */
+    /* background-image: linear-gradient(90deg, #89f7fe 0%, #66a6ff 100%); */
+    background-image: linear-gradient(90deg, #000000 0%, #434343 100%);
+    /* background-image: linear-gradient(90deg, #232526 0%, #414345 100%); */
+    /* background-image: linear-gradient(90deg, #77a1d3 0%, #79cbca 50%, #e684ae 100%); */
     color: #fff;
+    
 
 }
 
 .header {
-    position: fixed; /* stay on the screen, even when you scroll down */
+    position: absolute; /* stay on the screen, even when you scroll down */
     top: 0; /* position at very top of webpage */
     left: 0; /* position at very left of webpage */
     width: 100%; /* take up full width of the page, no matter the screen size */
     padding: 35px 8%; /* internal space - 20px top & bottom, 8% of width on right & left */
-    background: #1f242d;
+    background: transparent;
     display: flex; /* sets layout to flexbox - allows arranging child elements in a flexible way */
     justify-content: space-between; /* spreads child elements across screen, with even space in-between */
     align-items: center; /* ensures child elements are vertically alligned in the center */
@@ -57,7 +62,7 @@ body {
 
 .navbar a:hover,
 .navbar a.active { /* pseudo-class: applies styles to an element when the user hovers mouse over it */
-    color: #39ff14;
+    color: #ff73ef;
 }
 
 .home {
@@ -88,7 +93,7 @@ body {
 }
 
 .home-content h3 span {
-    color: #39ff14;
+    color: #ff73ef;
 }
 
 .home-content h1 {
@@ -104,73 +109,146 @@ body {
     max-width: 500px;
     opacity: 0;
     animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
-    animation-delay: 2s, 3s;
+    animation-delay: 1.2s, 2.2s;
 }
 
-.social-media a {
-    display: inline-flex;
-    justify-content: center;
+.home-buttons {
+    display: flex;
     align-items: center;
+    margin-top: 30px;
+    gap: 15px; /* Equal spacing between elements */
+}
+
+.home-buttons a {
+    text-decoration: none;
+    color: black;
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(1s + 0.2s * var(--i));
+}
+
+.home-buttons a i {
+    font-size: 25px;
+    color: #ff73ef;
+    border: 2px solid #ff73ef;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
-    background: transparent;
-    border: 2px solid #39ff14;
-    border-radius: 50%;
-    font-size: 25px;
-    color:#39ff14;
-    text-decoration: none;
-    margin: 30px 15px 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: .3s ease;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: calc(.2s * var(--i));
 }
 
-.social-media a:hover {
-    background: #39ff14;
+.home-buttons a i:hover {
+    background: #ff73ef;
     color: #1f242d;
-    box-shadow: 0 0 10px #39ff14;
+    box-shadow: 0 0 10px #ff73ef;
 }
 
 .btn {
+    margin: 0;
     display: inline-block;
     padding: 12px 28px;
-    background: #39ff14;
+    background: #ff73ef;
     border-radius: 40px;
-    box-shadow: 0 0 10px #39ff14;
+    box-shadow: 0 0 10px #ff73ef;
     font-size: 20px;
     color: #1f242d;
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
     opacity: 0;
-    animation: slideTop 1s ease forwards;
+    animation: slideLeft 1s ease forwards;
     animation-delay: 2s;
 }
 
 
+/* Styles for the About section */
 .about {
-    position: relative;
-    height: 100vh;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 70px 12% 0;
+    padding: 50px 8%;
 }
 
-.about-section h2 {
-    font-size: 36px;
+/* Style for the About image */
+.about-img img {
+    max-width: 500px;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.5s ease;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+/* Style for the About content */
+.about-content {
+    max-width: 50%;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.5s ease;
+}
+
+.about-content h2 {
+    font-size: 42px;
+    font-weight: 600;
     margin-bottom: 20px;
-    color: #39ff14;
+    color: #ff73ef;
 }
 
-.about-section p {
-    font-size: 18px;
-    line-height: 1.6;
+.about-content p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* Animation trigger */
+.about-img.animate img,
+.about-content.animate {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+/* Styles for the Skills section */
+.skills {
+    padding: 50px 8%;
     text-align: center;
-    max-width: 600px;
 }
 
+.skills h2 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #ff73ef;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 50px;
+    justify-items: center;
+}
+
+.skill-item i {
+    font-size: 120px;
+    color: #ff73ef;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Animation trigger */
+.skills.animate .skill-item i {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover effect */
+.skill-item i:hover {
+    transform: scale(1.1);
+}
 
 
 
@@ -224,8 +302,6 @@ body {
     }
 }
 
-/* ADD 3 LINE BUTTON FOR NAV BAR HERE */
-
 @media (max-width: 805px) {
     .navbar {
         display: flex;
@@ -246,8 +322,29 @@ body {
     }
 
     .navbar a {
-        margin: 10px 0;
-        font-size: 20px;
+        margin: 5px 0;
+        font-size: 24px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.3s ease;
+        animation: none; /* Override initial animation */
+    }
+
+    .navbar.active a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .navbar.active a:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .navbar.active a:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .navbar.active a:nth-child(3) {
+        transition-delay: 0.3s;
     }
 
     .menu-icon {
@@ -259,11 +356,9 @@ body {
 
     .header {
         padding: 20px 10%;
-        position: fixed;
         width: 100%;
         z-index: 100;
         top: 0;
-        background: #1f242d; /* Ensure the header has a background */
     }
 
     .home {
