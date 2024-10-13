@@ -1,12 +1,13 @@
-/* import poppins font from google fonts */
+/* Imports */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Global styles */
+
+/* GLOBAL STYLES */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* poppins: main font, sans-serif: fallback font */
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -20,40 +21,42 @@ body {
 
 }
 
+
+/* HEADER */
 .header {
-    position: absolute; /* stay on the screen, even when you scroll down */
-    top: 0; /* position at very top of webpage */
-    left: 0; /* position at very left of webpage */
-    width: 100%; /* take up full width of the page, no matter the screen size */
-    padding: 35px 8%; /* internal space - 20px top & bottom, 8% of width on right & left */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 8%;
     background: transparent;
-    display: flex; /* sets layout to flexbox - allows arranging child elements in a flexible way */
-    justify-content: space-between; /* spreads child elements across screen, with even space in-between */
-    align-items: center; /* ensures child elements are vertically alligned in the center */
-    z-index: 100; /* controls stacking order of elements: will be higher than any elements lower than 100 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
 }
 
 .logo {
     font-size: 32px;
     color: #fff;
-    text-decoration: none; /* removes decoration that can typically appear on links (like underlines) */
-    font-weight: 600; /* sets thickness to 600 (semi-bold) (bold is 700) */
-    /* cursor: pointer; keeps the cursor the same when hovering over */
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
     opacity: 0;
     animation: slideRight 1s ease forwards;
 }
 
-.navbar a { /* a targets all elements inside the class .navbar */
+.navbar a {
     display: inline-block;
     font-size: 20px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px; /* adds a 35px margin to the left side of each navigation link */
+    margin-left: 35px;
     transition: .3s;
     opacity: 0;
     animation: slideTop .5s ease forwards;
-    animation-delay: calc(.2s * var(--i)) /* we declared --i in html */
+    animation-delay: calc(.2s * var(--i))
 }
 
 .menu-icon {
@@ -61,23 +64,21 @@ body {
 }
 
 .navbar a:hover,
-.navbar a.active { /* pseudo-class: applies styles to an element when the user hovers mouse over it */
+.navbar a.active {
     color: #f6a192;
 }
 
+
+/* HOME */
 .home {
-    position: relative; /* positioned relative to its normal position (remains in flow of page, but can now use top, left, right, & bottom properties */
+    position: relative;
     width: 100%;
-    height: 100vh; /* 100% of viewport height - take up full height of browser window */
+    height: 100vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 8% 0; /* 50 px top padding, 8% left and right, 0 bottom */
+    padding: 50px 8% 0;
 }
-
-/* .home-content {
-    max-width: 50%;
-} */
 
 .home-content h3 {
     font-size: 54px;
@@ -87,12 +88,16 @@ body {
     animation-delay: .7s;
 }
 
-.home-content h3:nth-of-type(2) { /* Selects the 2nd occurence of an <h3> element (And I'm a ...) */
+.roles {
     animation: slideTop 1s ease forwards;
     animation-delay: .7s;
 }
 
-.home-content h3 span {
+.roles .positions {
+    color: #f6a192;
+}
+
+.typed-cursor {
     color: #f6a192;
 }
 
@@ -116,7 +121,7 @@ body {
     display: flex;
     align-items: center;
     margin-top: 30px;
-    gap: 15px; /* Equal spacing between elements */
+    gap: 15px;
 }
 
 .home-buttons a {
@@ -170,7 +175,8 @@ body {
     box-shadow: 0 0 15px #f6c492;
 }
 
-/* Styles for the About section */
+
+/* ABOUT */
 .about {
     width: 100%;
     display: flex;
@@ -180,7 +186,6 @@ body {
     margin-bottom: 200px;
 }
 
-/* Style for the About image */
 .about-img img {
     max-width: 500px;
     border-radius: 20px;
@@ -190,7 +195,6 @@ body {
     animation: floatImage 4s ease-in-out infinite;
 }
 
-/* Style for the About content */
 .about-content {
     max-width: 50%;
     opacity: 0;
@@ -210,14 +214,14 @@ body {
     line-height: 1.8;
 }
 
-/* Animation trigger */
 .about-img.animate img,
 .about-content.animate {
     opacity: 1;
     transform: translateX(0) translateY(0);
 }
 
-/* Skills Section Styles */
+
+/* SKILLS */
 .skills {
     width: 100%;
     padding: 50px 8%;
@@ -240,7 +244,6 @@ body {
     justify-content: center;
     gap: 40px;
     width: 100%;
-    /* max-width: 1200px; */
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.5s ease;
@@ -258,7 +261,7 @@ body {
 .skill-item i {
     font-size: 320px;
     color: #f6a192;
-    transition: color 1s ease; /* Smooth color transition */
+    transition: color 1s ease;
 }
 
 .skill-item:hover {
@@ -266,16 +269,16 @@ body {
 }
 
 .skill-item:hover i {
-    color: #f6d992; /* New color on hover */
+    color: #f6d992;
 }
 
-/* Animation trigger */
 .skills.animate .skills-grid {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Contact Section Styles */
+
+/* CONTACT */
 .contact {
     width: 100%;
     padding: 50px 8%;
@@ -365,7 +368,8 @@ body {
     box-shadow: 0 0 15px #f6c492;
 }
 
-/* Footer Styles */
+
+/* FOOTER */
 .footer {
     width: 100%;
     padding: 50px 8% 30px;
@@ -380,64 +384,431 @@ body {
 }
 
 
+/* MEDIA QUERIES FOR BIGGER SCREENS */
+@media (min-width: 1875px) {
+    /* HOME */
+    .home-content h1{
+        font-size: 96px;
+    }
+    .home-content h3 {
+        font-size: 60px;
+    }
+    .home-img img {
+        max-width: 520px;
+    }
+
+    /* ABOUT */
+    .about-img img {
+        max-width: 520px;
+    }
+    .about-content h2 {
+        font-size: 50px;
+    }
+    .about-content p {
+        font-size: 22px;
+        line-height: 1.8;
+    }
+
+    /* SKILLS */
+    .skills h2 {
+        font-size: 50px;
+    }
+    .skill-item {
+        width: 340px;
+        height: 340px;
+    }
+    .skill-item i {
+        font-size: 340px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 50px;
+    }
+    .contact p {
+        font-size: 22px;
+    }
+    .contact-form {
+        max-width: 700px;
+    }
+    .contact-form label {
+        font-size: 20px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 18px;
+    } 
+}
+
+@media (min-width: 2300px) {
+    /* HOME */
+    .home-content h1{
+        font-size: 128px;
+    }
+    .home-content h3 {
+        font-size: 76px;
+    }
+    .home-img img {
+        max-width: 640px;
+    }
+
+    /* ABOUT */
+    .about-img img {
+        max-width: 640px;
+    }
+    .about-content h2 {
+        font-size: 60px;
+    }
+    .about-content p {
+        font-size: 26px;
+        line-height: 1.8;
+    }
+
+    /* SKILLS */
+    .skills h2 {
+        font-size: 60px;
+    }
+    .skill-item {
+        width: 400px;
+        height: 400px;
+    }
+    .skill-item i {
+        font-size: 400px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 60px;
+    }
+    .contact p {
+        font-size: 26px;
+    }
+    .contact-form {
+        max-width: 800px;
+    }
+    .contact-form label {
+        font-size: 22px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 18px;
+    } 
+}
 
 /* MEDIA QUERIES FOR SMALLER SCREENS */
-@media (max-width: 1430px) {
+@media (max-width: 1690px) {
+    /* HOME */
+    .home-content h1{
+        font-size: 68px;
+    }
+    .home-content h3 {
+        font-size: 45px;
+    }
+    .home-img img {
+        max-width: 460px;
+    }
+
+    /* ABOUT */
+    .about-img img {
+        max-width: 460px;
+    }
+    .about-content h2 {
+        font-size: 45px;
+    }
+    .about-content p {
+        font-size: 20px;
+        line-height: 1.8;
+    }
+
+    /* SKILLS */
+    .skills h2 {
+        font-size: 45px;
+    }
+    .skill-item {
+        width: 280px;
+        height: 280px;
+    }
+    .skill-item i {
+        font-size: 280px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 45px;
+    }
+    .contact p {
+        font-size: 20px;
+    }
+    .contact-form {
+        max-width: 600px;
+    }
+    .contact-form label {
+        font-size: 18px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 18px;
+    } 
+}
+
+@media (max-width: 1462px) {
+    /* HOME */
     .home-content h1{
         font-size: 60px;
     }
-
     .home-content h3 {
         font-size: 40px;
     }
-
     .home-img img {
         max-width: 420px;
     }
-}
 
-@media (max-width: 1100px) {
-    .home-content h1{
+    /* ABOUT */
+    .about-img img {
+        max-width: 420px;
+    }
+    .about-content h2 {
         font-size: 50px;
     }
-
-    .home-content h3 {
-        font-size: 32px;
+    .about-content p {
+        font-size: 18px;
+        line-height: 1.6;
     }
 
-    .home-img img {
-        max-width: 350px;
+    /* SKILLS */
+    .skills h2 {
+        font-size: 50px;
     }
+    .skill-item {
+        width: 240px;
+        height: 240px;
+    }
+    .skill-item i {
+        font-size: 240px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 50px;
+    }
+    .contact p {
+        font-size: 20px;
+    }
+    .contact-form {
+        max-width: 600px;
+    }
+    .contact-form label {
+        font-size: 18px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 18px;
+    } 
 }
 
-@media screen and (max-width: 905px) {
+@media screen and (max-width: 1316px) {
+    /* HOME */
     .home {
         flex-direction: column; /* Stack elements vertically */
         justify-content: center;
         align-items: center;
     }
-
     .home-content {
         max-width: 100%; /* Make the content take full width */
         text-align: center; /* Center-align the text */
     }
-
+    .home-content h1{
+        font-size: 80px;
+    }
+    .home-content h3 {
+        font-size: 60px;
+    }
     .home-img img {
-        margin-top: 100px; /* Add some margin above and below the image */
+        max-width: 500px;
+        margin-top: 140px; /* Add some margin above and below the image */
+    }
+    .home-buttons {
+        justify-content: center;
     }
 
-    .social-media {
-        justify-content: center; /* Center social media icons */
+    /* ABOUT */
+    .about {
+        justify-content: center;
+        align-items: center;
     }
+    .about-img img {
+        display: none;
+    }
+    .about-content {
+        max-width: 80%; /* Make the content take full width */
+        text-align: center; /* Center-align the text */
+    }
+    .about-content h2 {
+        font-size: 50px;
+    }
+    .about-content p {
+        font-size: 24px;
+        line-height: 1.8;
+    }
+
+    /* SKILLS */
+    .skills h2 {
+        font-size: 50px;
+    }
+    .skill-item {
+        width: 240px;
+        height: 240px;
+    }
+    .skill-item i {
+        font-size: 240px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 50px;
+    }
+    .contact p {
+        font-size: 20px;
+    }
+    .contact-form {
+        max-width: 600px;
+    }
+    .contact-form label {
+        font-size: 18px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 18px;
+    } 
 }
 
-@media (max-width: 805px) {
+@media screen and (max-width: 1212px) {
+    /* HOME */
+    .home-content h1{
+        font-size: 70px;
+    }
+    .home-content h3 {
+        font-size: 50px;
+    }
+    .home-img img {
+        max-width: 450px;
+    }
+
+    /* ABOUT */
+    .about-content h2 {
+        font-size: 45px;
+    }
+    .about-content p {
+        font-size: 22px;
+        line-height: 1.7;
+    }
+
+    /* SKILLS */
+    .skills h2 {
+        font-size: 45px;
+    }
+    .skill-item {
+        width: 240px;
+        height: 240px;
+    }
+    .skill-item i {
+        font-size: 240px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 45px;
+    }
+    .contact p {
+        font-size: 20px;
+    }
+    .contact-form {
+        max-width: 600px;
+    }
+    .contact-form label {
+        font-size: 18px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 18px;
+    } 
+}
+
+@media screen and (max-width: 1013px) {
+    /* HOME */
+    .home-content h1{
+        font-size: 60px;
+    }
+    .home-content h3 {
+        font-size: 40px;
+    }
+    .home-img img {
+        max-width: 380px;
+    }
+    .home {
+        padding-top: 50px;
+    }
+
+    /* ABOUT */
+    .about-content h2 {
+        font-size: 40px;
+    }
+    .about-content p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    /* SKILLS */
+    .skills h2 {
+        font-size: 40px;
+    }
+    .skill-item {
+        width: 220px;
+        height: 220px;
+    }
+    .skill-item i {
+        font-size: 220px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 40px;
+    }
+    .contact p {
+        font-size: 18px;
+    }
+    .contact-form {
+        max-width: 600px;
+    }
+    .contact-form label {
+        font-size: 18px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 18px;
+    } 
+}
+
+@media (max-width: 814px) {
+    /* HOME */
+    .home-content h1{
+        font-size: 55px;
+    }
+    .home-content h3 {
+        font-size: 35px;
+    }
+    .home-img img {
+        max-width: 340px;
+    }
+    .home {
+        padding: 50px 5% 0; /* 50 px top padding, 8% left and right, 0 bottom */
+    }
     .navbar {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
-        top: 60px; /* Position it below the logo */
+        top: 65px; /* Position it below the logo */
         left: 10%; /* Align with the logo */
         width: 80%; /* Take a good portion of the screen */
         height: 0; /* Collapsed state */
@@ -445,11 +816,9 @@ body {
         background-color: transparent;
         transition: height 0.3s ease; /* Smooth height transition */
     }
-
     .navbar.active {
         height: auto; /* Expand to fit the contents */
     }
-
     .navbar a {
         margin: 5px 0;
         font-size: 24px;
@@ -458,78 +827,304 @@ body {
         transition: all 0.3s ease;
         animation: none; /* Override initial animation */
     }
-
     .navbar.active a {
         opacity: 1;
         transform: translateY(0);
     }
-
     .navbar.active a:nth-child(1) {
         transition-delay: 0.1s;
     }
-
     .navbar.active a:nth-child(2) {
         transition-delay: 0.2s;
     }
-
     .navbar.active a:nth-child(3) {
         transition-delay: 0.3s;
     }
-
     .menu-icon {
         display: block;
         font-size: 30px;
         color: #fff;
         cursor: pointer;
     }
-
     .header {
         padding: 20px 10%;
         width: 100%;
         z-index: 100;
         top: 0;
     }
-
     .home {
         transition: margin-top 0.3s ease; /* Smooth transition for the push-down effect */
     }
-}
+    .logo {
+        font-size: 26px;
+    }
 
-@media (max-width: 600px) {
-    .home-content h1{
+    /* ABOUT */
+    .about-content h2 {
         font-size: 40px;
     }
-
-    .home-content h3 {
-        font-size: 24px;
+    .about-content p {
+        font-size: 20px;
+        line-height: 1.6;
     }
 
-    .home-img img {
-        max-width: 300px;
+    /* SKILLS */
+    .skills-grid {
+        gap: 20px;
     }
 
-    .btn {
-        font-size: 16px;
+    .skills h2 {
+        font-size: 40px;
+    }
+    .skill-item {
+        width: 180px;
+        height: 180px;
+    }
+    .skill-item i {
+        font-size: 180px;
     }
 
+    /* CONTACT */
+    .contact h2 {
+        font-size: 40px;
+    }
+    .contact p {
+        font-size: 18px;
+    }
+    .contact-form {
+        max-width: 600px;
+    }
+    .contact-form label {
+        font-size: 18px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 18px;
+    } 
 }
 
-@media (max-width: 470px) {
-    .home-content h1{
-        font-size: 32px;
+@media (max-width: 667px) {
+    /* HOME */
+    .and-im-a {
+        display: none;
     }
-
-    .home-content h3 {
+    .home-buttons a i {
+        font-size: 22px;
+        width: 45px;
+        height: 45px;
+    }
+    .btn {
+        padding: 10px 25px;
+        font-size: 15px;
+    }
+    .navbar a {
+        font-size: 15px;
+    }
+    .logo {
         font-size: 20px;
     }
 
+    /* CONTACT */
+    .contact h2 {
+        font-size: 35px;
+    }
+    .contact p {
+        font-size: 16px;
+    }
+    .contact-form label {
+        font-size: 16px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px;
+    } 
+}
+
+@media (max-width: 495px) {
+    /* HOME */
+    .home-content h1{
+        font-size: 45px;
+    }
+    .home-content h3 {
+        font-size: 30px;
+    }
     .home-img img {
-        max-width: 250px;
+        max-width: 280px;
+    }
+
+    /* ABOUT */
+    .about-content h2 {
+        font-size: 35px;
+    }
+    .about-content p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+        gap: 5px;
+    }
+
+    .skills h2 {
+        font-size: 35px;
+    }
+    .skill-item {
+        width: 140px;
+        height: 140px;
+    }
+    .skill-item i {
+        font-size: 140px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 30px;
+    }
+    .contact p {
+        font-size: 15px;
+    }
+    .contact-form label {
+        font-size: 15px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 15px;
+    }
+    .contact-form .btn {
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 408px) {
+    /* HOME */
+    .home-content h1{
+        font-size: 38px;
+    }
+    .home-content h3 {
+        font-size: 22px;
+    }
+    .home-img img {
+        max-width: 200px;
+    }
+    .home-buttons a i {
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    .btn {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+    .logo {
+        font-size: 18px;
+    }
+
+    /* ABOUT */
+    .about-content h2 {
+        font-size: 32px;
+    }
+    .about-content p {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    /* SKILLS */
+    .skills h2 {
+        font-size: 32px;
+    }
+    .skill-item {
+        width: 120px;
+        height: 120px;
+    }
+    .skill-item i {
+        font-size: 120px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 24px;
+    }
+    .contact p {
+        font-size: 13px;
+    }
+    .contact-form label {
+        font-size: 13px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 13px;
+    } 
+    .contact-form .btn {
+        padding: 8px 22px;
+        font-size: 14px;
+    }
+
+    /* FOOTER */
+    .footer p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 347px) {
+    /* HOME */
+    .home-content h1{
+        font-size: 32px;
+    }
+    .home-content h3 {
+        font-size: 18px;
+    }
+    .home-img img {
+        max-width: 150px;
+    }
+    /* ABOUT */
+    .about-content h2 {
+        font-size: 28px;
+    }
+    .about-content p {
+        font-size: 13px;
+        line-height: 1.2;
+    }
+    /* SKILLS */
+    .skills h2 {
+        font-size: 28px;
+    }
+    .skill-item {
+        width: 100px;
+        height: 100px;
+    }
+    .skill-item i {
+        font-size: 100px;
+    }
+
+    /* CONTACT */
+    .contact h2 {
+        font-size: 23px;
+    }
+    .contact p {
+        font-size: 12px;
+    }
+    .contact-form label {
+        font-size: 12px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 12px;
+    } 
+    .contact-form .btn {
+        padding: 8px 22px;
+        font-size: 13px;
+    }
+
+    /* FOOTER */
+    .footer p {
+        font-size: 13px;
     }
 }
 
 
-/* KEYFRAMES ANIMATION */
+/* ANIMATIONS */
 @keyframes slideRight {
     0% {
         transform: translateX(-100px);

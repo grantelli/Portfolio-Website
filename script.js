@@ -1,4 +1,6 @@
+// TYPED.JS (Home Page Role)
 var typed = new Typed(".positions", {
+    // * CSS media queries expect the longest string to be "CS Major @ Iowa State" (21 characters) *
     strings: ["Software Engineer", "CS Major @ Iowa State", "Fullstack Developer", "Creator"],
     typeSpeed: 90,
     backSpeed: 90,
@@ -13,7 +15,7 @@ document.getElementById("menu-icon").addEventListener("click", function() {
     
     navbar.classList.toggle("active");
   
-    // Dynamically adjust the margin-top of the home section based on navbar state
+    // Adjust the margin-top of the home section based on navbar state
     if (navbar.classList.contains("active")) {
       home.style.marginTop = `${navbar.scrollHeight}px`; // Push the home section down by the navbar height
     } else {
